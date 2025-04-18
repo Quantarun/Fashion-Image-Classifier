@@ -196,7 +196,7 @@ def classify_image(image_url, attempt=1):
                     ]
                 }
             ],
-            max_completion_tokens=300
+            max_completion_tokens=500
         )
         
         # Extract the response
@@ -255,7 +255,7 @@ def test_openai_connection():
         response = client.chat.completions.create(
             model="o4-mini",
             messages=[{"role": "user", "content": "Hello"}],
-            max_completion_tokens=5
+            max_completion_tokens=10
         )
         return True, "Connection successful"
     except Exception as e:
